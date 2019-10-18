@@ -75,10 +75,12 @@ __webpack.config.js__
 +     rules: [
 +       {
 +         test: /\.css$/,
-+         use: [
-+           'style-loader',
-+           'css-loader'
-+         ]
++         use:[{
++		loader:'file-loader',
++		options:{
++			publicPath:"./dist/"
++		}
++	  }]
 +       }
 +     ]
 +   }
@@ -180,9 +182,12 @@ __webpack.config.js__
         },
 +       {
 +         test: /\.(png|svg|jpg|gif)$/,
-+         use: [
-+           'file-loader'
-+         ]
++         use:[{
++            loader:'file-loader',
++            options:{
++              publicPath:"./dist/"
++            }
++				  }]
 +       }
       ]
     }
